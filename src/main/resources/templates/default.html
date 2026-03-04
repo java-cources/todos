@@ -2,17 +2,19 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="default"
 >
 <head>
     <meta charset="UTF-8">
     <title>Todo List</title>
-    <meta th:insert="~{links}" />
+    <th:block th:insert="~{links}"></th:block>
 </head>
 <body>
     <div class="container">
-        <div layout:fragment="default"></div>
+        <div th:insert="~{header}"></div>
+    </div>
 
+    <div class="container">
+        <div layout:fragment="content"></div>
     </div>
 </body>
 </html>

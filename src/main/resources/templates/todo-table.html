@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Deadline Date</th>
+        <th scope="col">Is completed</th>
+        <th scope="col">Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+            th:each="todo : ${todos}"
+    >
+        <th th:text="${todo.getId()}"></th>
+        <th th:text="${todo.getName()}"></th>
+        <th th:text="${todo.getDeadlineDate()}"></th>
+        <th th:text="${todo.isCompleted()}"></th>
+        <th>
+            <button class="btn btn-info">Details</button>
+        </th>
+    </tr>
+    </tbody>
+</table>

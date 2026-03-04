@@ -2,6 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}"
 >
 <head>
     <meta charset="UTF-8">
@@ -10,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <div layout:fragment="default">
-        <h1>Todo list</h1>
+    <div layout:fragment="content">
+        <div th:insert="~{todo-table}"></div>
     </div>
 </body>
 </html>
