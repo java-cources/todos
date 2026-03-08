@@ -28,7 +28,9 @@
             </form>
         </th>
         <th class="text-center align-content-center">
-            <button class="btn btn-info">Details</button>
+            <a th:href="@{'/details/' + ${todo.id}}">
+                <button class="btn btn-info" type="button">Details</button>
+            </a>
         </th>
     </tr>
     </tbody>

@@ -27,14 +27,18 @@ public class TasksManager {
         idGenerator.set(maxId);
     }
 
+    public static Task getTaskById(Long id) {
+        return tasks.stream().filter(task -> Objects.equals(task.getId(), id)).findFirst().get();
+    }
+
     public static void addTask(Task task) {
         task.setId(idGenerator.incrementAndGet());
 
         tasks.add(task);
     }
 
-    public static void removeTask(Task task) {
-        tasks.remove(task);
+    public static void removeTask(Long id) {
+        tasks.removeIf(task -> Objects.equals(task.getId(), id));
     }
 
     public static void updateTask(Task task) {
