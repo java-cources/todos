@@ -49,7 +49,13 @@ public class TasksManager {
         } else {
             find.setName(task.getName());
             find.setDeadlineDate(task.getDeadlineDate());
-            find.setCompleted(task.isCompleted());
         }
+    }
+
+    public static void updateChecked(Long id, Boolean isCompleted) {
+        tasks.stream()
+                .filter(t -> Objects.equals(t.getId(), id))
+                .findFirst()
+                .ifPresent(t -> t.setCompleted(isCompleted));
     }
 }

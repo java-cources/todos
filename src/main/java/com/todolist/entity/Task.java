@@ -14,4 +14,14 @@ public class Task {
     private String name;
     private String deadlineDate;
     private boolean isCompleted;
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", deadlineDate='" + deadlineDate + '\'' +
+                ", isCompleted=" + isCompleted +
+                '}';
+    }
 }

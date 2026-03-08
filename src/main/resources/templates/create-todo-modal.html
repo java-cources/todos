@@ -1,0 +1,24 @@
+<div class="modal fade" id="createTodo" tabindex="-1" aria-labelledby="createTodoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="createTodoModalLabel">Create New Task</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="studentForm" action="/add-todo" method="post">
+          <div class="row mt-3">
+            <input type="text" name="name" placeholder="Name" class="form-control">
+          </div>
+          <div class="row mt-3">
+            <input type="date" name="deadlineDate" placeholder="Date" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" form="studentForm">Create</button>
+      </div>
+    </div>
+  </div>
+</div>

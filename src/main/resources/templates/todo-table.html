@@ -1,22 +1,33 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">ID</th>
+        <th class="text-center" scope="col">ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Deadline Date</th>
-        <th scope="col">Is completed</th>
-        <th scope="col">Details</th>
+        <th class="text-center" scope="col">Deadline Date</th>
+        <th class="text-center" scope="col">Is completed</th>
+        <th class="text-center" scope="col">Details</th>
     </tr>
     </thead>
     <tbody>
     <tr
             th:each="todo : ${todos}"
     >
-        <th th:text="${todo.getId()}"></th>
-        <th th:text="${todo.getName()}"></th>
-        <th th:text="${todo.getDeadlineDate()}"></th>
-        <th th:text="${todo.isCompleted()}"></th>
-        <th>
+        <th th:text="${todo.getId()}" class="text-center align-content-center"></th>
+        <th th:text="${todo.getName()}" class="align-content-center"></th>
+        <th th:text="${todo.getDeadlineDate()}" class="text-center align-content-center"></th>
+        <th class="text-center align-content-center">
+            <form action="/update-checked" method="post">
+                <input type="hidden" name="id" th:value="${todo.id}">
+
+                <input
+                        type="checkbox"
+                        name="completed"
+                        th:checked="${todo.completed}"
+                        onchange="this.form.submit()"
+                >
+            </form>
+        </th>
+        <th class="text-center align-content-center">
             <button class="btn btn-info">Details</button>
         </th>
     </tr>
